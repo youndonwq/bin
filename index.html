@@ -42,26 +42,37 @@
     }
     .qr-block {
       text-align: center;
+      margin-top: 15px;
     }
     .qr-block img {
-      width: 120px;
+      width: 180px;
     }
+    /* Microsoft Logo (Grid Style + Text) */
     .ms-logo {
       display: flex;
       align-items: center;
       margin-bottom: 15px;
     }
+    .ms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 18px);
+      grid-template-rows: repeat(2, 18px);
+      gap: 2px;
+    }
     .ms-square {
-      width: 15px;
-      height: 15px;
-      margin-right: 3px;
+      width: 18px;
+      height: 18px;
       display: inline-block;
     }
     .ms-red { background: red; }
     .ms-green { background: green; }
     .ms-blue { background: blue; }
     .ms-yellow { background: yellow; }
-    .ms-text { margin-left: 10px; font-weight: bold; }
+    .ms-text {
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
     .warning-text {
       font-size: 15px;
       margin-bottom: 15px;
@@ -145,20 +156,24 @@
               Simply collect error information and the troubleshooting will be performed for you.
             </div>
             <div class="qr-block">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=Support" alt="QR Code">
+              <!-- Microsoft Official Logo -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/512px-Microsoft_logo_%282012%29.svg.png" 
+                   alt="Microsoft Logo">
               <div class="qr-text">
                 For more information about this issue and the solution,<br>
-                Call: +1-818-394-0622<br><br>
+                Call: +1-805-362-0362<br><br>
                 Stop code: <strong>CRITICAL_PROCESS_DIED</strong>
               </div>
             </div>
           </div>
           <div class="right-panel">
             <div class="ms-logo">
-              <div class="ms-square ms-red"></div>
-              <div class="ms-square ms-green"></div>
-              <div class="ms-square ms-blue"></div>
-              <div class="ms-square ms-yellow"></div>
+              <div class="ms-grid">
+                <div class="ms-square ms-red"></div>
+                <div class="ms-square ms-green"></div>
+                <div class="ms-square ms-blue"></div>
+                <div class="ms-square ms-yellow"></div>
+              </div>
               <span class="ms-text">Microsoft</span>
             </div>
             <div class="warning-text">
@@ -170,7 +185,7 @@
             </div>
             <div class="black-box">
               Windows Contact Support<br>
-              +1-818-394-0622
+              +1-805-362-0362
             </div>
             <div class="scan-report">
               <div class="label">Scan Report</div>
